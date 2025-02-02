@@ -1,3 +1,64 @@
+ipfixprobe (4.15.0ubuntu1) focal; urgency=medium
+
+* Changes from v4.11.1
+* Improvements
+  - Fragmentation cache added.
+  - process/wg: Removed check for transport data length divisibility by 16.
+  - Enhanced DPDK memory pool creation using device socket ID.
+  - QUIC: Expanded flow detail extraction.
+  - Updated default packet queue burst size to 64 (consistent with input defaults).
+  - Workers CPU affinity improvements.
+  - Prefetch optimizations for better performance.
+  - IPv6: Improved header parsing and extension handling.
+  - DPDK: Timestamp read from hardware metadata when available.
+* New Features
+  - Input Plugins:
+  - NDP: Support for custom packet header timestamps.
+  - DPDK: Added MTU size configuration and telemetry support.
+* Output Plugins
+  - IPFIX: Introduced LZ4 compression support.
+  - IPFIX: Added non-blocking TCP socket option.
+* Telemetry
+  - Introduced AppFS telemetry.
+  - Updated telemetry documentation in README.
+* Plugins
+  - MQTT: Support for v3.1.1 protocol.
+  - TLS Extensions: Enhanced features for detailed analysis.
+* Bugfixes
+  - Fixed discrepancies in IPT PHIST features.
+  - Resolved issues with TCP options parsing.
+  - Corrected WireGuard byte order in IPFIX output.
+  - Addressed inconsistencies in IPv6 header parsing.
+  - Fixed RSS configuration in DPDK.
+  - Resolved DPDK queue size issues and packet parsing checks.
+* Documentation
+  - Introduced Jekyll-based documentation framework.
+  - Updated README with new telemetry features and examples.
+  - Minor fixes and revisions to improve clarity and navigation on the webpage.
+* Miscellaneous
+  - Added Docker container for processing PCAPs to CSVs.
+
+ipfixprobe (4.11.1ubuntu1) focal; urgency=medium
+
+* Change from v4.11.1
+  - fixed build on OpenWrt
+* Improvements
+  - IPFIX: propose new variable (cmd line option) to set ipfix template refresh rate
+  - DPDK: improvement of config and init script
+  - Flow cache: improve hashing to incorporate VLAN info
+  - statistics: improved monitoring capability, added additional statistics
+* New plugins
+  - GRE: add new plugin to export GRE tunnel information
+  - VLAN: add new plugin to export VLAN information
+  - NetTiSA: Add new NetTisa process plugin, see https://arxiv.org/abs/2310.05530
+  - OVPN: Improvements (Added RTP header validation function, Improve detection)
+  - HTTP: Add parsing HTTP response headers server and set-cookie names
+  - ICMP: Add new ICMP process plugin to export ICMP information
+  - Flow Hash: add new plugin to export Flow Hash field
+* Bugfixes
+  - templates and byte encoding (HTTP)
+  - QUIC: bugfixes and checks
+
 ipfixprobe (4.9.2ubuntu1) focal; urgency=medium
 
   * Changes in 4.9.2:
