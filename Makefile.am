@@ -337,7 +337,7 @@ deb-source:
 
 .PHONY: deb
 deb:
-	make dist && make distdir && ln -fs ipfixprobe-@VERSION@.tar.gz ipfixprobe_@VERSION@ubuntu@RELEASE@.orig.tar.gz && cd ipfixprobe-@VERSION@ && debuild
+	make dist && make distdir && ln -fs ipfixprobe-@VERSION@.tar.gz ipfixprobe_@VERSION@ubuntu@RELEASE@.orig.tar.gz && cd ipfixprobe-@VERSION@ && debuild -us -uc
 else
 endif
 
